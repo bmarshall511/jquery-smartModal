@@ -1,9 +1,12 @@
 /**
  * jQuery smartModal
+ * 
+ * Version: 1.0.2
  * Author: Ben Marshall
  * Author URL: http://www.benmarshall.me
  * Plugin URL: http://www.benmarshall.me/jquery-smartmodal/
- * GitHub: https://github.com/bmarshall511/jquery-smartmodal
+ * GitHub: https://github.com/bmarshall511/jquery-smartModal
+ * 
  * Licensed under the MIT license
  */
 
