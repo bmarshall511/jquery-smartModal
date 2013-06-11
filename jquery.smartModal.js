@@ -1,5 +1,5 @@
 /**
- * jQuery Smart Modal
+ * jQuery smartModal
  * Author: Ben Marshall
  * Author URL: http://www.benmarshall.me
  * Plugin URL: http://www.benmarshall.me/jquery-smartmodal/
