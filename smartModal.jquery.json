@@ -1,8 +1,8 @@
 {
   "name": "smartModal",
-  "version": "1.0.1",
-  "title": "jQuery smartModal",
-  "description": "A 'smart' jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more!",
+  "version": "1.0.2",
+  "title": "jQuery.smartModal",
+  "description": "A simple, lightweight jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more!",
   "keywords": [
     "modal"
   ],
