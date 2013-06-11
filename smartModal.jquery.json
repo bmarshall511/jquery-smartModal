@@ -1,0 +1,26 @@
+{
+  "name": "smartModal",
+  "version": "1.0.0",
+  "title": "jQuery smartModal",
+  "description": "A 'smart' jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more!",
+  "keywords": [
+    "modal"
+  ],
+  "author": {
+    "name": "Ben Marshall",
+    "url": "http://www.benmarshall.me"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.10",
+    "jquery-cookie": ">=1.0"
+  },
+  "homepage": "http://www.benmarshall.me/jquery-smartmodal/",
+  "docs": "https://github.com/bmarshall511/jquery-smartmodal",
+  "download": "http://code.jquery.com/#smartModal"
+}
