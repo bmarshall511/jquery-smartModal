@@ -60,10 +60,10 @@ A modal that disappears after so many seconds:
 <a href="#" class="triggerID">Click me</a>
 ```
 
-A modal that disappears and shows the number of remaining seconds left:
+A modal that disappears after so many seconds and shows the number of remaining seconds left:
 
 ```html
-<div class="smartmodal" id="triggerID" data-time="10">I'm a timed modal <span class="sec"></span> seconds before I close!</div>
+<div class="smartmodal" id="triggerID" data-time="10">I'm a timed modal, <span class="sec"></span> seconds before I close!</div>
 <a href="#" class="triggerID">Click me</a>
 ```
 
@@ -79,10 +79,28 @@ A modal that automatically pops up after a specified number of seconds:
 <div class="smartmodal auto" data-wait="10">I'm automatic after 10 seconds!</div>
 ```
 
-A modal that can't be closed:
+A modal that can't be closed (sticky):
 
 ```html
 <div class="smartmodal sticky auto">I can't be closed!</div>
+```
+
+A sticky modal that's closed after a specified number of seconds:
+
+```html
+<div class="smartmodal sticky auto" data-time="9">You can't close me, but I'll close myself after <span class="sec"></span> seconds!</div>
+```
+
+A sticky modal that can be manually closed after a specified number of seconds:
+
+```html
+<div class="smartmodal sticky auto" data-time="9" data-close="manual">I can't be closed until <span class="sec"></span> seconds! <a href="#" class="close">Close Me</a></div>
+```
+
+An automated timed sticky modal that can be manually closed after a specified number of seconds:
+
+```html
+<div class="smartmodal sticky auto" data-wait="10"  data-time="9" data-close="manual">I can't be closed until <span class="sec"></span> seconds! <a href="#" class="close">Close Me</a></div>
 ```
 
 ## Configuration Options
@@ -127,7 +145,8 @@ $.smartModal({
 | --- | --- |
 | `data-expires` | *Integer.* Specify the number of days until the cookie expires. |
 | `data-time` | *Integer.* Specify the number of seconds the modal should be visible. |
-| `data-wait` | *Integer.* Specify the number of seconds before the modal should popup. Should be used with the `auto` class. |
+| `data-wait` | *Integer* Specify the number of seconds before the modal should popup. Should be used with the `auto` class. |
+| `data-close` | *String (manual).* Disables the modal from closing automatically. Used in conjunction with `data-time` and the `sticky` class. |
 
 ### Additional Modal Options
 
@@ -139,20 +158,53 @@ You can display the number of remaining seconds until the modal disappears withi
 <div class="smartmodal" data-time="10">I'm a timed modal <span class="sec"></span> seconds before I close!</div>
 ```
 
+#### Add a close trigger in the modal
+
+You can easily add a close trigger to allow the modal to close when a user clicks on it:
+
+```html
+<div class="smartmodal">I'm a normal modal! <a href="#" class="close">Close Me</a></div>
+```
+
+## API Methods
+
+To make it easy to call jQuery.smartModal's methods, you can use it's API:
+
+```javascript
+$.smartModal('show', 'modalID'); // Shows a modal
+$.smartModal('hide', 'modalID'); // Hides a modal
+$.smartModal('settings', settingsObj); // Define smartModal's default settings
+$.smartModal('init', settingsObj); // Initialize the smartModal plugin
+```
+
 ## Cross-Browser Compatibility
 
 This plugin has been tested in the following browsers:
 
 * Google Chome
  * Version 27.0.1453.110
+* Firefox
+ * Version 21.0
 * Safari
  * Version 6.0.2
+* Opera
+ * Version 12.15
 
 
 ## Development
 
 * Source hosted at [GitHub](https://github.com/bmarshall511/jquery-smartModal)
 * Report issues, questions, feature requests on [GitHub Issues](https://github.com/bmarshall511/jquery-smartModal/issues)
+
+### Changelog
+
+#### Version 1.1.1
+
+* Added API methods
+* Fixed issue with timeouts and intervals
+* Added the ability to create sticky timed modals
+* Added the ability for a *close* trigger in the modal
+* Added debugging check for smartModals with duplicate id attributes
 
 ## Authors
 
