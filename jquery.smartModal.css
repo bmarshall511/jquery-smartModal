@@ -16,7 +16,7 @@ body {
 }
 
 .smartmodal-modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 999999;
   padding: 1em;
