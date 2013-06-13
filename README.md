@@ -103,6 +103,12 @@ An automated timed sticky modal that can be manually closed after a specified nu
 <div class="smartmodal sticky auto" data-wait="10"  data-time="9" data-close="manual">I can't be closed until <span class="sec"></span> seconds! <a href="#" class="close">Close Me</a></div>
 ```
 
+An animated modal:
+
+```html
+<div class="smartmodal sticky auto" data-animation="top|easeOutBounce|5000">I'm animated with the easeOutBounce effect that lastes 5 seconds.</div>
+```
+
 ## Configuration Options
 
 *smartModal* allows for additional configuration options to allow for more flexibility and control over the modals.
@@ -129,6 +135,9 @@ $.smartModal({
 | `debug` | *Boolean.* Enable/disbale debug mode. |
 | `shortkeys` | *Boolean.* Enable/disbale shortcut keys. |
 | `clickClose` | *Boolean.* Enable/disbale the ability to close the modals by clicking on the overlay. |
+| `animationDuration` | *Integer.* Default number of milliseconds for the animation duration. |
+| `animationEasing` | *String.* The default easing effect for the modal animation. See http://easings.net/ |
+| `gaTracking` | *Boolean.* Enable/disable Google Analytics event tracking. *In Development* |
 
 
 ### Modal Class Attribute Options
@@ -147,6 +156,7 @@ $.smartModal({
 | `data-time` | *Integer.* Specify the number of seconds the modal should be visible. |
 | `data-wait` | *Integer* Specify the number of seconds before the modal should popup. Should be used with the `auto` class. |
 | `data-close` | *String (manual).* Disables the modal from closing automatically. Used in conjunction with `data-time` and the `sticky` class. |
+| `data-animation` | *String (start|effect|duration).* Specifies the modals animation settings. |
 
 ### Additional Modal Options
 
@@ -197,6 +207,14 @@ This plugin has been tested in the following browsers:
 * Report issues, questions, feature requests on [GitHub Issues](https://github.com/bmarshall511/jquery-smartModal/issues)
 
 ### Changelog
+
+#### Version 1.1.1
+
+* Fixed issue with close trigger
+* Added the ability for modal animations
+* Added minified version of the script
+* Cleaned-up JS with JSlint.com
+* Started on integrating Google Analytics event tracking
 
 #### Version 1.1.0
 
