@@ -137,7 +137,7 @@ $.smartModal({
 | `clickClose` | *Boolean.* Enable/disbale the ability to close the modals by clicking on the overlay. |
 | `animationDuration` | *Integer.* Default number of milliseconds for the animation duration. |
 | `animationEasing` | *String.* The default easing effect for the modal animation. See http://easings.net/ |
-| `gaTracking` | *Boolean.* Enable/disable Google Analytics event tracking. *In Development* |
+| `gaTracking` | *Boolean.* Enable/disable Google Analytics event tracking. |
 
 
 ### Modal Class Attribute Options
@@ -156,7 +156,8 @@ $.smartModal({
 | `data-time` | *Integer.* Specify the number of seconds the modal should be visible. |
 | `data-wait` | *Integer* Specify the number of seconds before the modal should popup. Should be used with the `auto` class. |
 | `data-close` | *String (manual).* Disables the modal from closing automatically. Used in conjunction with `data-time` and the `sticky` class. |
-| `data-animation` | *String (start|effect|duration).* Specifies the modals animation settings. |
+| `data-animation` | *String (start, effect, duration).* Specifies the modals animation settings. |
+| `data-name` | *String.* The name of the modal. Used for GA event tracking. |
 
 ### Additional Modal Options
 
@@ -207,6 +208,12 @@ This plugin has been tested in the following browsers:
 * Report issues, questions, feature requests on [GitHub Issues](https://github.com/bmarshall511/jquery-smartModal/issues)
 
 ### Changelog
+
+#### Version 1.1.2
+
+* Fixed issue where the modal wouldn't initialize when no settings are defined
+* Fixed problem when trying to detect if Google Analytics tracking script has been loaded
+* Integrated Google Event Tracking (https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide)
 
 #### Version 1.1.1
 
