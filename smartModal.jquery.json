@@ -1,6 +1,6 @@
 {
   "name": "smartModal",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "title": "jQuery.smartModal",
   "description": "A simple, lightweight jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user using HTML5 web storage or jQuery.cookie as a fallback.",
   "keywords": [
