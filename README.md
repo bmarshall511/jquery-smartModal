@@ -9,6 +9,8 @@ Include the `jquery.smartModal.js` script *after* the jQuery library (unless you
 
 ```html
 <script src='jquery.smartModal.js'></script>
+<!-- Optional, fallback for older browsers that don't support webStorage. -->
+<script src='jquery.cookie.js'></script>
 <script>
 $(function() {
   $.smartModal();
