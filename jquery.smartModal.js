@@ -1,7 +1,7 @@
 /*!
  * jQuery smartModal
  * 
- * Version: 1.1.2
+ * Version: 2.0.0
  * Author: Ben Marshall
  * Author URL: http://www.benmarshall.me
  * jQuery Plugin URL: http://plugins.jquery.com/smartModal/
@@ -23,7 +23,8 @@
     clickClose: true,
     animationDuration: 800,
     animationEasing: 'linear',
-    gaTracking: false
+    gaTracking: false,
+    shortkeys: true
   },
     storageEnabled = false,
     cookiesEnabled = false,
@@ -38,7 +39,7 @@
       'init': function () {
         // Check if GA is enabled
         if (settings.gaTracking) {
-          if (_gaq !== 'undefined') {
+          if (typeof(_gaq) !== 'undefined') {
             gaEnabled = true;
           } else {
             if (settings.debug) {
@@ -142,7 +143,7 @@
 
         // Send event to Google Analytics if set
         if (gaEnabled && modal.data('name')) {
-          methods.gaTrackEvent('Modal: ' + modal.data('name'), 'Opened');
+          methods.gaTrackEvent('jQuery.smartModal', modal.data('name'), 'Opened');
         }
 
         // Check if a timed modal
@@ -249,7 +250,7 @@
 
             // Send event to Google Analytics if set
             if (gaEnabled && modal.data('name')) {
-              methods.gaTrackEvent('Modal: ' + modal.data('name'), 'Closed');
+              methods.gaTrackEvent('jQuery.smartModal', modal.data('name'), 'Closed');
             }
           }
         }
@@ -464,6 +465,7 @@
   $.smartModal = function (options, id) {
     if (typeof options === 'object') {
       settings = $.extend(settings, options);
+      methods.init();
     } else if (typeof options === 'string' && typeof id === 'string') {
       switch (options) {
       case 'show':

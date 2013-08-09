@@ -133,7 +133,7 @@ $.smartModal({
 | `hideDelay` | *Integer.* Number of milliseconds it takes for the modal to fade out. |
 | `cookieExpires` | *Integer.* Number of days until the modal cookies expire. |
 | `debug` | *Boolean.* Enable/disbale debug mode. |
-| `shortkeys` | *Boolean.* Enable/disbale shortcut keys. |
+| `shortkeys` | *Boolean.* Enable/disable shortcut keys. |
 | `clickClose` | *Boolean.* Enable/disbale the ability to close the modals by clicking on the overlay. |
 | `animationDuration` | *Integer.* Default number of milliseconds for the animation duration. |
 | `animationEasing` | *String.* The default easing effect for the modal animation. See http://easings.net/ |
@@ -156,7 +156,7 @@ $.smartModal({
 | `data-time` | *Integer.* Specify the number of seconds the modal should be visible. |
 | `data-wait` | *Integer* Specify the number of seconds before the modal should popup. Should be used with the `auto` class. |
 | `data-close` | *String (manual).* Disables the modal from closing automatically. Used in conjunction with `data-time` and the `sticky` class. |
-| `data-animation` | *String (start, effect, duration).* Specifies the modals animation settings. |
+| `data-animation` | *String (start effect duration).* Specifies the modals animation settings. |
 | `data-name` | *String.* The name of the modal. Used for GA event tracking. |
 
 ### Additional Modal Options
@@ -193,13 +193,14 @@ $.smartModal('init', settingsObj); // Initialize the smartModal plugin
 This plugin has been tested in the following browsers:
 
 * Google Chome
- * Version 27.0.1453.110
+ * Version 28
+ * Version 27
 * Firefox
- * Version 21.0
+ * Version 21
 * Safari
- * Version 6.0.2
+ * Version 6
 * Opera
- * Version 12.15
+ * Version 12
 
 
 ## Development
@@ -208,6 +209,13 @@ This plugin has been tested in the following browsers:
 * Report issues, questions, feature requests on [GitHub Issues](https://github.com/bmarshall511/jquery-smartModal/issues)
 
 ### Changelog
+
+#### Version 2.0.0
+
+* Fixed issue the modal woudn't initialize the settings object is defined
+* Changed the GA event tracking naming convention structure
+* Fixed JS error when the GA tracking script hasn't be loaded
+* Fixed the missing `shortkey` setting
 
 #### Version 1.1.2
 
