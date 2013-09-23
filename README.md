@@ -212,6 +212,9 @@ This plugin has been tested in the following browsers:
 
 ### Changelog
 
+#### Version 2.1.0
+* Added the ability to manually trigger a modal that's set to show only once (https://github.com/bmarshall511/jquery-smartModal/issues/15)
+
 #### Version 2.0.0
 
 * Fixed issue the modal woudn't initialize the settings object is defined

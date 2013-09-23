@@ -1,7 +1,7 @@
 /*!
  * jQuery smartModal
  * 
- * Version: 2.0.0
+ * Version: 2.1.0
  * Author: Ben Marshall
  * Author URL: http://www.benmarshall.me
  * jQuery Plugin URL: http://plugins.jquery.com/smartModal/
@@ -211,11 +211,6 @@
             // Set the cookie.
             $.cookie('smartModal-' + id, 'shown', { 'path' : '/', 'expires' : expires });
           }
-
-          // Unbind the modal trigger if one is on the page
-          if ($('.' + id).length) {
-            $('.' + id).unbind('click');
-          }
         }
       },
       // Close a modal
@@ -401,32 +396,28 @@
           }
           modalIDs.push(id);
 
+          // Hide smartModals by default.
+          modal.hide();
+
           // Check if modal should appear automagically
           if (modal.hasClass('once')) {
             // First, check web storage
             if (storageEnabled) {
               if (localStorage['smartModal-' + id] === 'shown') {
-                // The modal has already been shown, so remove from the page
-                modal.remove();
                 modal = false;
                 methods.countModals();
               }
             // If web storage isn't supported, check cookies
             } else if (cookiesEnabled) {
               if ($.cookie('smartModal-' + id) === 'shown') {
-                // The modal has already been shown, so remove from the page
-                modal.remove();
                 modal = false;
                 methods.countModals();
               }
             }
           }
 
-          // Initialize the modal
+          // Check if it's an active modal.
           if (modal) {
-            // Hide the modal from the page
-            modal.hide();
-
             // Check if the modal should popup automagically
             if (modal.hasClass('auto')) {
               // Check if a timer has been set to show the modal
@@ -440,15 +431,15 @@
                 methods.showModal(id);
               }
             }
+          }
 
-            // Check if a modal trigger is on the page
-            if ($('.' + id).length) {
-              // Bind the modal trigger to the click event
-              $('.' + id).bind('click', function (e) {
-                e.preventDefault();
-                methods.showModal(id);
-              });
-            }
+          // Check if a modal trigger is on the page
+          if ($('.' + id).length) {
+            // Bind the modal trigger to the click event
+            $('.' + id).bind('click', function (e) {
+              e.preventDefault();
+              methods.showModal(id);
+            });
           }
         });
       },
